@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
+import { useState } from "react";
 import { TbLayoutDashboard } from "react-icons/tb";
 import { PiStudentFill } from "react-icons/pi";
 import { GiBookshelf } from "react-icons/gi";
@@ -12,12 +13,38 @@ const linkClass = ({ isActive }) =>
   }`;
 
 export default function AppLayout() {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="h-screen bg-slate-100">
       <div className="flex h-full">
-        <aside className="hidden md:flex w-64 flex-col bg-slate-900 text-slate-200">
-          <div className="px-6 py-7  border-b border-slate-800">
-            <h2 className="text-3xl font-bold text-white ml-7">Al-Aqmar </h2>
+        {/* Mobile button */}
+        <button
+          onClick={() => setOpen(true)}
+          className="md:hidden fixed top-4 left-4 z-50 text-3xl"
+        >
+          ☰
+        </button>
+
+        {/* Sidebar */}
+        <aside
+          className={`
+          fixed md:static top-0 left-0 h-full w-64 bg-slate-900 text-slate-200
+          transform ${open ? "translate-x-0" : "-translate-x-full"}
+          md:translate-x-0 transition-transform duration-300
+          flex flex-col z-40
+        `}
+        >
+          <div className="px-6 py-7 border-b border-slate-800 flex justify-between items-center">
+            <h2 className="text-3xl font-bold text-white">Al-Aqmar</h2>
+
+            {/* Close button mobile */}
+            <button
+              onClick={() => setOpen(false)}
+              className="md:hidden text-xl"
+            >
+              ✕
+            </button>
           </div>
 
           <nav className="p-5 space-y-3">
@@ -49,6 +76,7 @@ export default function AppLayout() {
           </div>
         </aside>
 
+        {/* Content */}
         <main className="flex-1 overflow-y-auto p-8 bg-gray-200 text-base">
           <Outlet />
         </main>
