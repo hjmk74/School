@@ -1,16 +1,50 @@
-# React + Vite
+# School Dashboard (Full-Stack)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack school management dashboard built with React, Node.js, Express, and MySQL.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Student management
+- Teacher management
+- Classes & lectures
+- Exams & results
+- Dashboard analytics
+- REST API integration
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Frontend:
 
-## Expanding the ESLint configuration
+- React (Vite)
+- Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Backend:
+
+- Node.js
+- Express.js
+
+Database:
+
+- MySQL
+
+## API
+
+The frontend communicates with a REST API built using Express and MySQL.
+
+## Run the project
+
+### Backend
+
+cd backend  
+npm install  
+npm run dev
+
+### Frontend
+
+cd frontend  
+npm install  
+npm run dev
+
+## Notes
+
+- Environment variables are stored securely using `.env` (not included in repo)
