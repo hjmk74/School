@@ -1,4 +1,4 @@
-# School Dashboard 🎓
+# School Dashboard 
 
 A full-stack school management system designed to simplify academic and administrative operations through a centralized dashboard.
 
